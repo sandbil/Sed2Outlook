@@ -247,6 +247,7 @@
             this.KeyPreview = true;
             this.MaximizeBox = false;
             this.Name = "Sed2OutlookFrm";
+            this.Load += new System.EventHandler(this.Sed2OutlookFrm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Error)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

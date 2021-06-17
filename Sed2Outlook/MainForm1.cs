@@ -22,12 +22,6 @@ namespace Sed2Outlook
             InitializeComponent();
         }
 
-        private void Resume_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
         private void Browse_Click(object sender, EventArgs e)
         {
             if (FolderBrowser.ShowDialog() == DialogResult.OK)
@@ -165,6 +159,24 @@ namespace Sed2Outlook
             //
             contextMenu.MenuItems[4].Enabled = false;
             contextMenu.MenuItems[3].Enabled = true;
+        }
+
+        private void Sed2OutlookFrm_Load(object sender, EventArgs e)
+        {
+            // load configuration
+            if (config.LoadSettings())
+            {
+                // set window location and size
+                this.Location = config.mainWindowLocation;
+
+                //
+                if (config.startServing)
+                    Start_Click(this, e);
+                //
+                startServing.Checked = config.startServing;
+                startMinimized.Checked = config.startMinimized;
+                startOnWindows.Checked = config.startOnWindows;
+            }
         }
     }
 }
