@@ -50,6 +50,9 @@
             this.menuItem8 = new System.Windows.Forms.MenuItem();
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.Error = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btClose = new System.Windows.Forms.Button();
+            this.btMinimize = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.FolderBrowser = new System.Windows.Forms.FolderBrowserDialog();
             ((System.ComponentModel.ISupportInitialize)(this.Error)).BeginInit();
             this.SuspendLayout();
@@ -189,7 +192,7 @@
             // 
             resources.ApplyResources(this.menuItem2, "menuItem2");
             this.menuItem2.Index = 1;
-            this.menuItem2.Click += new System.EventHandler(this.menuItem2_Click);
+            this.menuItem2.Click += new System.EventHandler(this.btMinimize_Click);
             // 
             // menuItem3
             // 
@@ -212,7 +215,7 @@
             // 
             resources.ApplyResources(this.menuItem8, "menuItem8");
             this.menuItem8.Index = 5;
-            this.menuItem8.Click += new System.EventHandler(this.menuItem8_Click);
+            this.menuItem8.Click += new System.EventHandler(this.btClose_Click);
             // 
             // notifyIcon
             // 
@@ -224,6 +227,39 @@
             this.Error.ContainerControl = this;
             resources.ApplyResources(this.Error, "Error");
             // 
+            // btClose
+            // 
+            resources.ApplyResources(this.btClose, "btClose");
+            this.btClose.BackColor = System.Drawing.Color.Transparent;
+            this.btClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.Error.SetError(this.btClose, resources.GetString("btClose.Error"));
+            this.Error.SetIconAlignment(this.btClose, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btClose.IconAlignment"))));
+            this.Error.SetIconPadding(this.btClose, ((int)(resources.GetObject("btClose.IconPadding"))));
+            this.btClose.Name = "btClose";
+            this.btClose.UseVisualStyleBackColor = false;
+            this.btClose.Click += new System.EventHandler(this.btClose_Click);
+            // 
+            // btMinimize
+            // 
+            resources.ApplyResources(this.btMinimize, "btMinimize");
+            this.btMinimize.BackColor = System.Drawing.Color.Transparent;
+            this.Error.SetError(this.btMinimize, resources.GetString("btMinimize.Error"));
+            this.Error.SetIconAlignment(this.btMinimize, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btMinimize.IconAlignment"))));
+            this.Error.SetIconPadding(this.btMinimize, ((int)(resources.GetObject("btMinimize.IconPadding"))));
+            this.btMinimize.Name = "btMinimize";
+            this.btMinimize.UseVisualStyleBackColor = false;
+            this.btMinimize.Click += new System.EventHandler(this.btMinimize_Click);
+            // 
+            // label2
+            // 
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Error.SetError(this.label2, resources.GetString("label2.Error"));
+            this.Error.SetIconAlignment(this.label2, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("label2.IconAlignment"))));
+            this.Error.SetIconPadding(this.label2, ((int)(resources.GetObject("label2.IconPadding"))));
+            this.label2.Name = "label2";
+            // 
             // FolderBrowser
             // 
             resources.ApplyResources(this.FolderBrowser, "FolderBrowser");
@@ -232,6 +268,11 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.ControlBox = false;
+            this.Controls.Add(this.btClose);
+            this.Controls.Add(this.btMinimize);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.startOnWindows);
             this.Controls.Add(this.startMinimized);
             this.Controls.Add(this.startServing);
@@ -243,11 +284,13 @@
             this.Controls.Add(this.Start);
             this.Controls.Add(this.HTTP_PORT);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
             this.MaximizeBox = false;
             this.Name = "Sed2OutlookFrm";
             this.Load += new System.EventHandler(this.Sed2OutlookFrm_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Sed2OutlookFrm_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Sed2OutlookFrm_MouseMove);
             ((System.ComponentModel.ISupportInitialize)(this.Error)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -277,6 +320,9 @@
         private System.Windows.Forms.MenuItem menuItem8;
         private System.Windows.Forms.NotifyIcon notifyIcon;
         private System.Windows.Forms.FolderBrowserDialog FolderBrowser;
+        private System.Windows.Forms.Button btClose;
+        private System.Windows.Forms.Button btMinimize;
+        private System.Windows.Forms.Label label2;
     }
 }
 

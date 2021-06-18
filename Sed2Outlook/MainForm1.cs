@@ -17,6 +17,8 @@ namespace Sed2Outlook
     {
         CsHTTPServer.CsHTTPServer HTTPServer;
         private Configuration config = new Configuration(Path.GetDirectoryName(Application.ExecutablePath));
+        int eX, eY;
+
         public Sed2OutlookFrm()
         {
             InitializeComponent();
@@ -113,23 +115,6 @@ namespace Sed2Outlook
             this.Hide();
         }
 
-        private void menuItem8_Click(object sender, EventArgs e)
-        {
-            if ((HTTPServer != null) && (HTTPServer.IsAlive))
-                HTTPServer.Stop();
-
-            // save configuration
-            //
-            config.mainWindowLocation = this.Location;
-            //
-            config.startServing = startServing.Checked;
-            config.startMinimized = startMinimized.Checked;
-            config.startOnWindows = startOnWindows.Checked;
-
-            config.SaveSettings();
-            Application.ExitThread();
-        }
-
         private void Start_Click(object sender, EventArgs e)
         {
             //
@@ -177,6 +162,50 @@ namespace Sed2Outlook
                 startMinimized.Checked = config.startMinimized;
                 startOnWindows.Checked = config.startOnWindows;
             }
+        }
+
+        private void btClose_Click(object sender, EventArgs e)
+        {
+            if ((HTTPServer != null) && (HTTPServer.IsAlive))
+                HTTPServer.Stop();
+
+            // save configuration
+            //
+            config.mainWindowLocation = this.Location;
+            //
+            config.startServing = startServing.Checked;
+            config.startMinimized = startMinimized.Checked;
+            config.startOnWindows = startOnWindows.Checked;
+
+            config.SaveSettings();
+            Application.ExitThread();
+
+        }
+
+        private void btMinimize_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void Sed2OutlookFrm_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Left += e.X - eX;
+                this.Top += e.Y - eY;
+                this.OnMove(e);
+            }
+
+        }
+
+        private void Sed2OutlookFrm_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                eX = e.X;
+                eY = e.Y;
+            }
+
         }
     }
 }

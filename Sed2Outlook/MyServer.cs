@@ -24,7 +24,27 @@ namespace Sed2Outlook.CsHTTPServer
 
         public override void OnResponse(ref HTTPRequestStruct rq, ref HTTPResponseStruct rp)
         {
-            string path = this.Folder + "\\" + rq.URL.Replace("/", "\\");
+            switch (rq.URL)
+            {
+                case "/add":
+                    Console.WriteLine("Case add");
+                    break;
+                case "/status":
+                    Console.WriteLine("Case 2");
+                    break;
+                default:
+                    string bodyStr = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">\n";
+                    bodyStr += "<HTML><HEAD>\n";
+                    bodyStr += "<META http-equiv=Content-Type content=\"text/html; charset=windows-1252\">\n";
+                    bodyStr += "</HEAD>\n";
+                    bodyStr += "<BODY><p>Сервис создания почтовых сообщений из документов СЭД\n<p>\n";
+                    bodyStr += "</BODY></HTML>\n";
+
+                    rp.BodyData = Encoding.ASCII.GetBytes(bodyStr);
+                    return;
+            }
+
+                string path = this.Folder + "\\" + rq.URL.Replace("/", "\\");
 
             if (Directory.Exists(path))
             {
@@ -44,11 +64,7 @@ namespace Sed2Outlook.CsHTTPServer
                         bodyStr += "<br><a href = \"" + rq.URL + Path.GetFileName(dirs[i]) + "/\">[" + Path.GetFileName(dirs[i]) + "]</a>\n";
                     for (int i = 0; i < files.Length; i++)
                         bodyStr += "<br><a href = \"" + rq.URL + Path.GetFileName(files[i]) + "\">" + Path.GetFileName(files[i]) + "</a>\n";
-                    bodyStr += "</BODY></HTML>\n";
-
-                    rp.BodyData = Encoding.ASCII.GetBytes(bodyStr);
-                    return;
-                }
+                                    }
             }
 
             if (File.Exists(path))
