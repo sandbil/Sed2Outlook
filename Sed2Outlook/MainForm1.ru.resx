@@ -117,185 +117,157 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>340, 206</value>
+  <data name="btClose.Error" xml:space="preserve">
+    <value />
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>СЭД2Outlook</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btClose.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
-  <data name="startOnWindows.Location" type="System.Drawing.Point, System.Drawing">
-    <value>230, 168</value>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btClose.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="startOnWindows.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 27</value>
+  <data name="btMinimize.Error" xml:space="preserve">
+    <value />
   </data>
-  <data name="startMinimized.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 168</value>
+  <data name="btMinimize.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
-  <data name="startMinimized.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 27</value>
+  <data name="btMinimize.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="frmCaption.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="frmCaption.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="frmCaption.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="frmCaption.Text" xml:space="preserve">
+    <value>  СЭД2Outlook</value>
+  </data>
+  <data name="startMinimized.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="startMinimized.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="startMinimized.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="startMinimized.Text" xml:space="preserve">
     <value>Свернуть</value>
   </data>
-  <data name="startServing.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 168</value>
+  <data name="startServing.Error" xml:space="preserve">
+    <value />
   </data>
-  <data name="startServing.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 27</value>
+  <data name="startServing.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="startServing.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="startServing.Text" xml:space="preserve">
     <value>Автостарт</value>
   </data>
-  <data name="Browse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>300, 54</value>
+  <data name="Browse.Error" xml:space="preserve">
+    <value />
   </data>
-  <data name="Browse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>28, 26</value>
+  <data name="Browse.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
-  <data name="Browse.Text" xml:space="preserve">
-    <value>...</value>
+  <data name="Browse.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="LHTTP_PORT.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 84</value>
+  <data name="LHTTP_PORT.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LHTTP_PORT.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="LHTTP_PORT.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="LHTTP_PORT.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 23</value>
   </data>
   <data name="LHTTP_PORT.Text" xml:space="preserve">
     <value>Порт</value>
   </data>
-  <data name="LHTTP_FOLDER.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 57</value>
+  <data name="LATTACH_FOLDER.Error" xml:space="preserve">
+    <value />
   </data>
-  <data name="LHTTP_FOLDER.Text" xml:space="preserve">
+  <data name="LATTACH_FOLDER.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="LATTACH_FOLDER.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="LATTACH_FOLDER.Text" xml:space="preserve">
     <value>Папка</value>
   </data>
-  <data name="ATTACH_FOLDER.Location" type="System.Drawing.Point, System.Drawing">
-    <value>74, 57</value>
+  <data name="ATTACH_FOLDER.Error" xml:space="preserve">
+    <value />
   </data>
-  <data name="ATTACH_FOLDER.Size" type="System.Drawing.Size, System.Drawing">
-    <value>220, 22</value>
+  <data name="ATTACH_FOLDER.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
-  <data name="ATTACH_FOLDER.Text" xml:space="preserve">
-    <value>C:\EmailAttachSed\</value>
+  <data name="ATTACH_FOLDER.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="Stop.Location" type="System.Drawing.Point, System.Drawing">
-    <value>98, 121</value>
+  <data name="Stop.Error" xml:space="preserve">
+    <value />
   </data>
-  <data name="Stop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 27</value>
+  <data name="Stop.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="Stop.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="Stop.Text" xml:space="preserve">
     <value>Стоп</value>
   </data>
-  <data name="Start.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 121</value>
+  <data name="Start.Error" xml:space="preserve">
+    <value />
   </data>
-  <data name="Start.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 27</value>
+  <data name="Start.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="Start.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="Start.Text" xml:space="preserve">
     <value>Старт</value>
   </data>
-  <data name="HTTP_PORT.Location" type="System.Drawing.Point, System.Drawing">
-    <value>74, 84</value>
+  <data name="HTTP_PORT.Error" xml:space="preserve">
+    <value />
   </data>
-  <data name="HTTP_PORT.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 22</value>
+  <data name="HTTP_PORT.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 118</value>
+  <data name="HTTP_PORT.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="menuItem1.Text" xml:space="preserve">
-    <value>&amp;Открыть</value>
+  <data name="lblActions.Error" xml:space="preserve">
+    <value />
   </data>
-  <data name="menuItem2.Text" xml:space="preserve">
-    <value>&amp;Скрыть</value>
+  <data name="lblActions.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
-  <data name="menuItem4.Text" xml:space="preserve">
-    <value>С&amp;тарт</value>
+  <data name="lblActions.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="menuItem5.Text" xml:space="preserve">
-    <value>Сто&amp;п</value>
+  <data name="startOnWindows.Error" xml:space="preserve">
+    <value />
   </data>
-  <data name="menuItem8.Text" xml:space="preserve">
-    <value>&amp;Выход</value>
+  <data name="startOnWindows.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
-  <data name="notifyIcon.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        AAABAAIAICAQAAAAAADoAgAAJgAAABAQEAAAAAAAKAEAAA4DAAAoAAAAIAAAAEAAAAABAAQAAAAAAIAC
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAgAAAAICAAIAAAACAAIAAgIAAAICAgADAwMAAAAD/AAD/
-        AAAA//8A/wAAAP8A/wD//wAA////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIiIAAAAAAAAAAAAAAAAAA
-        iPj4AAAAAAAAAAAAAAAACI+P/4AAAAAAAAAAAAAAAIj////4AAAAAAAAAAAAAACPj/+PiIAAAAAAAAAA
-        AAAPj/AI//iAAAAAAAAAAAAACPgHgI+PiAAAAAAAAAAAAP/weHgI//eAAAAAAAAAAAD48IeHgP+HgAAA
-        AAAAAAAA//8If3gI+HgAAAAAAAAAD/+P8Pf3D/gPAAAAAAAAAA//+PB/f3D4CIAAAAAAAAAP+P9w9/jw
-        j3DwAAAAAAAAAP/3D3+PgPiAgAAAAAAAAAD/8Hf3+PCPgIgAAAAAAAAAj/cPf4+ICICPAAAAAAAAAP//
-        +P/4+A+AjwAAAAAAAAD4+P+Pj4gIgI8AAAAAAAAA///4//iID4CPAAAAAAAAD4+Pj4+IcPiAjwAAAAAA
-        AA//+Pj4h4D/gI8AAAAAAAAP+P+PiHh/jwiPAAAAAAAAD///+IeIePgI/wAAAAAAAAj4h4h4h4+AiPAA
-        AAAAAAAA/4CHiHj4gI/wAAAAAAAAAA+IAIeHcAj/AAAAAAAAAAAP+IgAAAiP8AAAAAAAAAAAAP+IiIiI
-        /wAAAAAAAAAAAAAA/4+Pj/AAAAAAAAAAAAAAAAD///AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//h////w
-        P///4B///8AP//+AB///gAP//4AD//+AAf//AAD//wAA//8AAH/+AAB//gAAP/4AAD//AAA//wAAH/8A
-        AB//AAAf/wAAH/8AAB/+AAAf/gAAH/4AAB/+AAAf/gAAP/4AAD//AAB//wAA//+AAf//wAP///AH///8
-        H/8oAAAAEAAAACAAAAABAAQAAAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAgAAAAICAAIAA
-        AACAAIAAgIAAAICAgADAwMAAAAD/AAD/AAAA//8A/wAAAP8A/wD//wAA////AAAAAAAAAAAAAAAAD/AA
-        AAAAAAD//wAAAAAACPD/gAAAAACPBw/wAAAAAP8HcPcAAAAA+PB3CAAAAAD/B4gIAAAAAI8HiAiAAAAA
-        //iIgIAAAACI+IiAgAAAAP+IeICAAAAA+IeICAAAAAAIAACPAAAAAACIiPAAAAAAAAAAAAAA/n8AAPw/
-        AAD4HwAA+A8AAPAPAADwBwAA8AcAAPAHAADwAwAA8AMAAPADAADwAwAA8AcAAPAHAAD4DwAA/B8AAA==
-</value>
-  </data>
-  <data name="notifyIcon.Text" xml:space="preserve">
-    <value>MyServer</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="notifyIcon.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="btClose.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 7.8pt, style=Bold</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="btClose.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btClose.Size" type="System.Drawing.Size, System.Drawing">
-    <value>36, 27</value>
-  </data>
-  <data name="btClose.Text" xml:space="preserve">
-    <value>Х</value>
-  </data>
-  <data name="btMinimize.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 7.8pt, style=Bold</value>
-  </data>
-  <data name="btMinimize.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btMinimize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 27</value>
-  </data>
-  <data name="btMinimize.Text" xml:space="preserve">
-    <value>_</value>
-  </data>
-  <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 7.8pt, style=Bold</value>
-  </data>
-  <data name="label2.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopLeft</value>
-  </data>
-  <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 8</value>
-  </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>318, 33</value>
-  </data>
-  <data name="label2.TabIndex" type="System.Int32, mscorlib">
-    <value>32</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>  Sed2Outlook</value>
-  </data>
-  <data name="label2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
+  <data name="startOnWindows.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
 </root>

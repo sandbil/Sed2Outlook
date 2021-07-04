@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Linq;
 //using System.Text;
+using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 
@@ -9,7 +10,7 @@ namespace Sed2Outlook.CsHTTPServer
 {
     public abstract class CsHTTPServer
     {
-        private int portNum = 8080;
+        private int portNum = 8082;
         private TcpListener listener;
         System.Threading.Thread Thread;
 
@@ -66,7 +67,8 @@ namespace Sed2Outlook.CsHTTPServer
 
             bool done = false;
 
-            listener = new TcpListener(portNum);
+            //listener = new TcpListener(portNum);
+            listener = new TcpListener(IPAddress.Any, portNum);
 
             listener.Start();
 
@@ -99,16 +101,6 @@ namespace Sed2Outlook.CsHTTPServer
         {
             listener.Stop();
             this.Thread.Abort();
-        }
-
-        public void Suspend()
-        {
-            this.Thread.Suspend();
-        }
-
-        public void Resume()
-        {
-            this.Thread.Resume();
         }
 
         public abstract void OnResponse(ref HTTPRequestStruct rq, ref HTTPResponseStruct rp);

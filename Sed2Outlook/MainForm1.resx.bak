@@ -119,14 +119,14 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="startOnWindows.Location" type="System.Drawing.Point, System.Drawing">
-    <value>230, 168</value>
+    <value>233, 131</value>
   </data>
   <data name="startOnWindows.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 27</value>
+    <value>111, 18</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="startOnWindows.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>29</value>
   </data>
   <data name="startOnWindows.Text" xml:space="preserve">
     <value>On Windows</value>
@@ -144,16 +144,16 @@
     <value>3</value>
   </data>
   <data name="startMinimized.Location" type="System.Drawing.Point, System.Drawing">
-    <value>119, 168</value>
+    <value>131, 131</value>
   </data>
   <data name="startMinimized.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 27</value>
+    <value>96, 18</value>
   </data>
   <data name="startMinimized.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>28</value>
   </data>
   <data name="startMinimized.Text" xml:space="preserve">
-    <value>Minimized</value>
+    <value>Minimized.</value>
   </data>
   <data name="&gt;&gt;startMinimized.Name" xml:space="preserve">
     <value>startMinimized</value>
@@ -168,16 +168,16 @@
     <value>4</value>
   </data>
   <data name="startServing.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 168</value>
+    <value>18, 131</value>
   </data>
   <data name="startServing.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 27</value>
+    <value>116, 18</value>
   </data>
   <data name="startServing.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>27</value>
   </data>
   <data name="startServing.Text" xml:space="preserve">
-    <value>AutoStart</value>
+    <value>Start serving.</value>
   </data>
   <data name="&gt;&gt;startServing.Name" xml:space="preserve">
     <value>startServing</value>
@@ -192,13 +192,13 @@
     <value>5</value>
   </data>
   <data name="Browse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>315, 54</value>
+    <value>335, 52</value>
   </data>
   <data name="Browse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>28, 26</value>
+    <value>77, 26</value>
   </data>
   <data name="Browse.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>25</value>
   </data>
   <data name="Browse.Text" xml:space="preserve">
     <value>...</value>
@@ -216,16 +216,19 @@
     <value>6</value>
   </data>
   <data name="LHTTP_PORT.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 84</value>
+    <value>13, 56</value>
   </data>
   <data name="LHTTP_PORT.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 23</value>
+    <value>60, 23</value>
   </data>
   <data name="LHTTP_PORT.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>24</value>
   </data>
   <data name="LHTTP_PORT.Text" xml:space="preserve">
     <value>Port</value>
+  </data>
+  <data name="LHTTP_PORT.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
   </data>
   <data name="&gt;&gt;LHTTP_PORT.Name" xml:space="preserve">
     <value>LHTTP_PORT</value>
@@ -240,19 +243,13 @@
     <value>7</value>
   </data>
   <data name="LATTACH_FOLDER.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 55</value>
+    <value>13, 31</value>
   </data>
   <data name="LATTACH_FOLDER.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 23</value>
+    <value>100, 23</value>
   </data>
   <data name="LATTACH_FOLDER.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="LATTACH_FOLDER.Text" xml:space="preserve">
-    <value>Folder</value>
-  </data>
-  <data name="LATTACH_FOLDER.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
+    <value>23</value>
   </data>
   <data name="&gt;&gt;LATTACH_FOLDER.Name" xml:space="preserve">
     <value>LATTACH_FOLDER</value>
@@ -267,13 +264,13 @@
     <value>8</value>
   </data>
   <data name="ATTACH_FOLDER.Location" type="System.Drawing.Point, System.Drawing">
-    <value>74, 57</value>
+    <value>74, 29</value>
   </data>
   <data name="ATTACH_FOLDER.Size" type="System.Drawing.Size, System.Drawing">
-    <value>235, 22</value>
+    <value>100, 22</value>
   </data>
   <data name="ATTACH_FOLDER.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>22</value>
   </data>
   <data name="&gt;&gt;ATTACH_FOLDER.Name" xml:space="preserve">
     <value>ATTACH_FOLDER</value>
@@ -287,14 +284,17 @@
   <data name="&gt;&gt;ATTACH_FOLDER.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
+  <data name="Stop.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="Stop.Location" type="System.Drawing.Point, System.Drawing">
-    <value>94, 124</value>
+    <value>131, 88</value>
   </data>
   <data name="Stop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 27</value>
+    <value>76, 27</value>
   </data>
   <data name="Stop.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>21</value>
   </data>
   <data name="Stop.Text" xml:space="preserve">
     <value>Stop</value>
@@ -312,13 +312,13 @@
     <value>10</value>
   </data>
   <data name="Start.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 124</value>
+    <value>23, 88</value>
   </data>
   <data name="Start.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 27</value>
+    <value>77, 27</value>
   </data>
   <data name="Start.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+    <value>18</value>
   </data>
   <data name="Start.Text" xml:space="preserve">
     <value>Start</value>
@@ -336,13 +336,16 @@
     <value>11</value>
   </data>
   <data name="HTTP_PORT.Location" type="System.Drawing.Point, System.Drawing">
-    <value>74, 84</value>
+    <value>74, 56</value>
   </data>
   <data name="HTTP_PORT.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 22</value>
+    <value>252, 22</value>
   </data>
   <data name="HTTP_PORT.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+    <value>17</value>
+  </data>
+  <data name="HTTP_PORT.Text" xml:space="preserve">
+    <value>8080</value>
   </data>
   <data name="&gt;&gt;HTTP_PORT.Name" xml:space="preserve">
     <value>HTTP_PORT</value>
@@ -356,17 +359,14 @@
   <data name="&gt;&gt;HTTP_PORT.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
-  <data name="lblActions.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopLeft</value>
-  </data>
   <data name="lblActions.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 121</value>
+    <value>13, 118</value>
   </data>
   <data name="lblActions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>335, 33</value>
+    <value>100, 23</value>
   </data>
   <data name="lblActions.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+    <value>26</value>
   </data>
   <data name="&gt;&gt;lblActions.Name" xml:space="preserve">
     <value>lblActions</value>
@@ -384,28 +384,28 @@
     <value>17, 17</value>
   </metadata>
   <data name="OpenItem1.Text" xml:space="preserve">
-    <value />
+    <value>&amp;Открыть</value>
   </data>
   <data name="HideItem2.Text" xml:space="preserve">
-    <value />
+    <value>&amp;Скрыть</value>
   </data>
   <data name="menuItem3.Text" xml:space="preserve">
-    <value />
+    <value>-</value>
   </data>
   <data name="StartItem4.Text" xml:space="preserve">
-    <value />
+    <value>С&amp;тарт</value>
   </data>
   <data name="StopItem5.Text" xml:space="preserve">
-    <value />
+    <value>Сто&amp;п</value>
   </data>
   <data name="ExitItem8.Text" xml:space="preserve">
-    <value />
+    <value>&amp;Выход</value>
   </data>
   <metadata name="notifyIcon.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>164, 17</value>
+    <value>170, 12</value>
   </metadata>
   <metadata name="Error.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>289, 17</value>
+    <value>305, 17</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -414,26 +414,16 @@
     <value>8, 16</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>360, 206</value>
-  </data>
-  <data name="btClose.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 7.8pt, style=Bold</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="btClose.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+    <value>424, 161</value>
   </data>
   <data name="btClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>325, 4</value>
+    <value>374, 1</value>
   </data>
   <data name="btClose.Size" type="System.Drawing.Size, System.Drawing">
-    <value>28, 26</value>
+    <value>38, 23</value>
   </data>
   <data name="btClose.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="btClose.Text" xml:space="preserve">
-    <value>Х</value>
+    <value>34</value>
   </data>
   <data name="&gt;&gt;btClose.Name" xml:space="preserve">
     <value>btClose</value>
@@ -447,23 +437,14 @@
   <data name="&gt;&gt;btClose.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="btMinimize.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 7.8pt, style=Bold</value>
-  </data>
-  <data name="btMinimize.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="btMinimize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>292, 4</value>
+    <value>254, 11</value>
   </data>
   <data name="btMinimize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>28, 26</value>
+    <value>75, 23</value>
   </data>
   <data name="btMinimize.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="btMinimize.Text" xml:space="preserve">
-    <value>_</value>
+    <value>33</value>
   </data>
   <data name="&gt;&gt;btMinimize.Name" xml:space="preserve">
     <value>btMinimize</value>
@@ -477,29 +458,14 @@
   <data name="&gt;&gt;btMinimize.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="frmCaption.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 7.8pt, style=Bold</value>
-  </data>
-  <data name="frmCaption.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopLeft</value>
-  </data>
-  <data name="frmCaption.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="frmCaption.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 1</value>
+    <value>0, 1</value>
   </data>
   <data name="frmCaption.Size" type="System.Drawing.Size, System.Drawing">
-    <value>358, 33</value>
+    <value>421, 23</value>
   </data>
   <data name="frmCaption.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="frmCaption.Text" xml:space="preserve">
-    <value>  Sed2Outlook</value>
-  </data>
-  <data name="frmCaption.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
+    <value>32</value>
   </data>
   <data name="&gt;&gt;frmCaption.Name" xml:space="preserve">
     <value>frmCaption</value>
@@ -583,6 +549,6 @@
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <metadata name="FolderBrowser.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>378, 17</value>
+    <value>410, 14</value>
   </metadata>
 </root>

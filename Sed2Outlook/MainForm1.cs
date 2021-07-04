@@ -39,12 +39,12 @@ namespace Sed2Outlook
         private void ATTACH_FOLDER_Validating(object sender, CancelEventArgs e)
         {
             string errorMsg = "Folder must be valid path.\n" +
-                "For example 'C:\\EmailAttachSed\' ";
+                "For example 'C:\\EmailAttachSed' ";
             if (!Directory.Exists(ATTACH_FOLDER.Text))
             {
                 // Cancel the event and select the text to be corrected by the user.
                 e.Cancel = true;
-                HTTP_PORT.Select(0, ATTACH_FOLDER.Text.Length);
+                ATTACH_FOLDER.Select(0, ATTACH_FOLDER.Text.Length);
 
                 // Set the ErrorProvider error with the text to display. 
                 this.Error.SetError(ATTACH_FOLDER, errorMsg);
@@ -89,7 +89,7 @@ namespace Sed2Outlook
             catch (FormatException)
             {
                 errorMessage = "Port number must be 1 to 65535.\n" +
-                    "For example '8080' ";
+                    "For example '8082' ";
                 return false;
             }
 
@@ -100,19 +100,14 @@ namespace Sed2Outlook
             }
 
             errorMessage = "Port number must be 1 to 65535.\n" +
-                "For example '8080' ";
+                "For example '8082' ";
             return false;
         }
 
-        private void menuItem1_Click(object sender, EventArgs e)
+        private void OpenItem1_Click(object sender, EventArgs e)
         {
             this.Show();
             this.BringToFront();
-        }
-
-        private void menuItem2_Click(object sender, EventArgs e)
-        {
-            this.Hide();
         }
 
         private void Start_Click(object sender, EventArgs e)
@@ -149,19 +144,21 @@ namespace Sed2Outlook
         private void Sed2OutlookFrm_Load(object sender, EventArgs e)
         {
             // load configuration
-            if (config.LoadSettings())
-            {
-                // set window location and size
-                this.Location = config.mainWindowLocation;
+            config.LoadSettings();
+            // set window location and size
+            this.Location = config.mainWindowLocation;
 
-                //
-                if (config.startServing)
-                    Start_Click(this, e);
-                //
-                startServing.Checked = config.startServing;
-                startMinimized.Checked = config.startMinimized;
-                startOnWindows.Checked = config.startOnWindows;
-            }
+            //
+            ATTACH_FOLDER.Text = config.attachFolder;
+            HTTP_PORT.Text = config.httpPort.ToString();
+            //
+            if (config.startServing)
+                Start_Click(this, e);
+            //
+            startServing.Checked = config.startServing;
+            startMinimized.Checked = config.startMinimized;
+            startOnWindows.Checked = config.startOnWindows;
+            
         }
 
         private void btClose_Click(object sender, EventArgs e)
@@ -172,6 +169,10 @@ namespace Sed2Outlook
             // save configuration
             //
             config.mainWindowLocation = this.Location;
+            //
+            config.attachFolder = ATTACH_FOLDER.Text;
+            config.httpPort = Int32.Parse(HTTP_PORT.Text);
+
             //
             config.startServing = startServing.Checked;
             config.startMinimized = startMinimized.Checked;
