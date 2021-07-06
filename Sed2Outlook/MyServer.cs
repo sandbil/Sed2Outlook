@@ -30,18 +30,26 @@ namespace Sed2Outlook.CsHTTPServer
         {
             HttpResponseMessage response = new HttpResponseMessage();
             var httpClient = new HttpClient();
-            response = await httpClient.PostAsync(uri, new StringContent(data));
+            using (var content = new StringContent(data, System.Text.Encoding.UTF8, "application/json"))
+                response = await httpClient.PostAsync(uri, content);
             response.EnsureSuccessStatusCode();
             httpClient.Dispose();
             return await response.Content.ReadAsStringAsync();
+            //if (result.StatusCode == System.Net.HttpStatusCode.Created)
+            //    return await response.Content.ReadAsStringAsync();
+            //string returnValue = result.Content.ReadAsStringAsync().Result;
+            //throw new Exception($"Failed to POST data: ({result.StatusCode}): {returnValue}");
+
+
         }
-        public async Task<string> TaskDownloadFile(string uri, string data)
+        public async Task<string> TaskDownloadFile(string uri, AttachFileInfo data)
         {
             HttpResponseMessage response = new HttpResponseMessage();
             var httpClient = new HttpClient();
-            var fileInfo = new FileInfo($"123.pdf");
-
-            response = await httpClient.PostAsync(uri, new StringContent(data));
+            JObject jsonData = (JObject)JToken.FromObject(data);
+            var fileInfo = new FileInfo(data.name);
+            using (var content = new StringContent(jsonData.ToString(), System.Text.Encoding.UTF8, "application/json"))
+                response = await httpClient.PostAsync(uri, content);
             response.EnsureSuccessStatusCode();
             using (var ms = await response.Content.ReadAsStreamAsync())
             {
@@ -71,7 +79,7 @@ namespace Sed2Outlook.CsHTTPServer
             public string isController { get; set; }
         }
 
-        public class DocFiles
+        public class AttachFileInfo
         {
             public string id { get; set; }
             public string name { get; set; }
@@ -97,14 +105,14 @@ namespace Sed2Outlook.CsHTTPServer
             public string summary { get; set; }
             public SedUser creator { get; set; }
             public string internalNumber { get; set; }
-            public IList<DocFiles> files { get; set; }
+            public IList<AttachFileInfo> files { get; set; }
 
         }
 
         public override void OnResponse(ref HTTPRequestStruct rq, ref HTTPResponseStruct rp)
         {
             string bodyStr = "";
-            string docId, token;
+            string docId = "", token = "", postData = "";
             if (!(rq.Args is null))
             {
                 if (rq.Args.ContainsKey("id")) docId = rq.Args["id"].ToString();
@@ -118,15 +126,17 @@ namespace Sed2Outlook.CsHTTPServer
                     
                     try
                     {
-                        bodyStr = TaskGetDocAsync("http://localhost:8080/api/document/document", "").Result; //TODO post args
+                        postData = string.Format("{{'token': '{0}', 'documentId': '{1}' }}", token, docId);
+                        bodyStr = TaskGetDocAsync("http://10.75.113.107:8080/api/document/document", postData).Result; //TODO post args
                         JObject doc = JObject.Parse(bodyStr);
                         Doc2msg docForMsg = doc.ToObject<Doc2msg>();
-                        foreach (DocFiles elm in docForMsg.files)
+                        foreach (AttachFileInfo elm in docForMsg.files)
                         {
                             //var tasks = new List<Task>();
                             //tasks.Add(PostAsync(""));
                             //Task.WaitAll(tasks.ToArray());
-                            bodyStr = TaskDownloadFile("http://localhost:8080/document/2017_Honda_CR-V_5_RU.pdf", "").Result; //TODO post args
+                            //postData = string.Format("{{'filePath': '{0}', 'fileName': '{1}' }}",  elm.fullPath, elm.name);
+                            bodyStr += TaskDownloadFile("http://10.75.113.107:8080/api/document/downloadFile", elm).Result; //TODO post args
                           
                         }
                         rp.BodyData = Encoding.UTF8.GetBytes(bodyStr);
@@ -134,7 +144,7 @@ namespace Sed2Outlook.CsHTTPServer
                     catch (Exception ex)
                     {
                         bodyStr += "Case add";
-                        bodyStr += string.Format("Error: {0}  Message: ", ex.HResult.ToString("X"), ex.Message); // TODO check error message
+                        bodyStr += string.Format("Error: {0}  Message: {1}", ex.HResult.ToString("X"), ex.Message); // TODO check error message
 
                         rp.BodyData = Encoding.UTF8.GetBytes(bodyStr);
                         //Console.WriteLine("Case add");
