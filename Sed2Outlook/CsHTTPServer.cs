@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections;
-using System.Linq;
-//using System.Text;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;

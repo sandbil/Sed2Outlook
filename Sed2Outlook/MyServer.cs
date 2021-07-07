@@ -26,11 +26,12 @@ namespace Sed2Outlook.CsHTTPServer
             this.Folder = theFolder;
         }
 
-        public async Task<String> TaskGetDocAsync(string uri, string data)
+        public async Task<String> TaskGetDocAsync(string uri, dynamic data)
         {
             HttpResponseMessage response = new HttpResponseMessage();
             var httpClient = new HttpClient();
-            using (var content = new StringContent(data, System.Text.Encoding.UTF8, "application/json"))
+            JObject jsonData = (JObject)JToken.FromObject(data);
+            using (var content = new StringContent(jsonData.ToString(), System.Text.Encoding.UTF8, "application/json"))
                 response = await httpClient.PostAsync(uri, content);
             response.EnsureSuccessStatusCode();
             httpClient.Dispose();
@@ -42,12 +43,12 @@ namespace Sed2Outlook.CsHTTPServer
 
 
         }
-        public async Task<string> TaskDownloadFile(string uri, AttachFileInfo data)
+        public async Task<string> TaskDownloadFile(string uri, dynamic data)
         {
             HttpResponseMessage response = new HttpResponseMessage();
             var httpClient = new HttpClient();
             JObject jsonData = (JObject)JToken.FromObject(data);
-            var fileInfo = new FileInfo(data.name);
+            var fileInfo = new FileInfo(data.fileName);
             using (var content = new StringContent(jsonData.ToString(), System.Text.Encoding.UTF8, "application/json"))
                 response = await httpClient.PostAsync(uri, content);
             response.EnsureSuccessStatusCode();
@@ -112,7 +113,9 @@ namespace Sed2Outlook.CsHTTPServer
         public override void OnResponse(ref HTTPRequestStruct rq, ref HTTPResponseStruct rp)
         {
             string bodyStr = "";
-            string docId = "", token = "", postData = "";
+            string docId = "", token = "", sedSRV = "10.75.113.107:8080"; 
+            dynamic postData;
+
             if (!(rq.Args is null))
             {
                 if (rq.Args.ContainsKey("id")) docId = rq.Args["id"].ToString();
@@ -126,8 +129,9 @@ namespace Sed2Outlook.CsHTTPServer
                     
                     try
                     {
-                        postData = string.Format("{{'token': '{0}', 'documentId': '{1}' }}", token, docId);
-                        bodyStr = TaskGetDocAsync("http://10.75.113.107:8080/api/document/document", postData).Result; //TODO post args
+                        //postData = string.Format("{{'token': '{0}', 'documentId': '{1}' }}", token, docId);
+                        postData = new { token = token, documentId = docId };
+                        bodyStr = TaskGetDocAsync("http://"+sedSRV+"/api/document/document", postData).Result; //TODO post args
                         JObject doc = JObject.Parse(bodyStr);
                         Doc2msg docForMsg = doc.ToObject<Doc2msg>();
                         foreach (AttachFileInfo elm in docForMsg.files)
@@ -136,7 +140,8 @@ namespace Sed2Outlook.CsHTTPServer
                             //tasks.Add(PostAsync(""));
                             //Task.WaitAll(tasks.ToArray());
                             //postData = string.Format("{{'filePath': '{0}', 'fileName': '{1}' }}",  elm.fullPath, elm.name);
-                            bodyStr += TaskDownloadFile("http://10.75.113.107:8080/api/document/downloadFile", elm).Result; //TODO post args
+                            postData = new { filePath = elm.fullPath, fileName = elm.name };
+                            bodyStr += TaskDownloadFile("http://" + sedSRV + "/api/document/downloadFile", postData).Result; //TODO post args
                           
                         }
                         rp.BodyData = Encoding.UTF8.GetBytes(bodyStr);
