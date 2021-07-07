@@ -49,7 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="apiMsOutLook.cs" />
+    <Compile Include="Paths.cs" />
     <Compile Include="Configuration.cs" />
     <Compile Include="CsHTTPRequest.cs" />
     <Compile Include="CsHTTPServer.cs" />
