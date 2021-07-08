@@ -14,6 +14,9 @@ namespace Sed2Outlook.CsHTTPServer
     public class MyServer : CsHTTPServer
     {
         public string Folder;
+        OutLook.Application outlookObj = null;
+        OutLook.MAPIFolder root = null;
+        OutLook.MailItem mailItem = null;
 
         public MyServer() : base()
         {
@@ -42,12 +45,13 @@ namespace Sed2Outlook.CsHTTPServer
 
 
         }
-        public async Task<string> TaskDownloadFile(string uri, dynamic data)
+        public async Task<string> TaskDownloadFile(string uri, dynamic data, DirectoryInfo tempFolder)
         {
             HttpResponseMessage response = new HttpResponseMessage();
             var httpClient = new HttpClient();
             JObject jsonData = (JObject)JToken.FromObject(data);
-            var fileInfo = new FileInfo(data.fileName);
+            string targetPath = Path.Combine(tempFolder.FullName, data.fileName);
+            var fileInfo = new FileInfo(targetPath);
             using (var content = new StringContent(jsonData.ToString(), System.Text.Encoding.UTF8, "application/json"))
                 response = await httpClient.PostAsync(uri, content);
             response.EnsureSuccessStatusCode();
@@ -109,13 +113,33 @@ namespace Sed2Outlook.CsHTTPServer
 
         }
 
+        public void ReleaseCOMObjects()
+        {
+            if (outlookObj != null)
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(outlookObj);
+            if (mailItem != null)
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(mailItem);
+
+            // The internet said do this and it works so it's here
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+        }
+
         public override void OnResponse(ref HTTPRequestStruct rq, ref HTTPResponseStruct rp)
         {
             string bodyStr = "";
             string docId = "", token = ""; 
             string sedSRV = "10.75.113.107:8080";
-            sedSRV = "localhost:8080";
+            //sedSRV = "localhost:8080";
             dynamic postData;
+            string headPage = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">\n";
+            headPage += "<HTML><HEAD>\n";
+            headPage += "<META http-equiv=Content-Type content=\"text/html; charset=utf-8\">\n";
+            headPage += "</HEAD>\n";
+            bodyStr += "<BODY><p>Сервис создания почтовых сообщений из документов СЭД\n<p>\n";
+            bodyStr += "</BODY></HTML>\n";
 
             if (!(rq.Args is null))
             {
@@ -129,49 +153,55 @@ namespace Sed2Outlook.CsHTTPServer
                 case "/add":
 
                     var tempFolder = new DirectoryInfo(Path.Combine(Paths.Temp, Path.GetRandomFileName()));
+                    tempFolder.Create();
                     try
                     {
-                        OutLook._Application outlookObj = new OutLook.Application();
-                        OutLook.MAPIFolder root = outlookObj.Session.DefaultStore.GetRootFolder();
-                        OutLook._MailItem mailItem = outlookObj.CreateItem(OutLook.OlItemType.olMailItem) as OutLook.MailItem;
+                        outlookObj = new OutLook.Application();
+                        root = outlookObj.Session.DefaultStore.GetRootFolder();
+                        mailItem = outlookObj.CreateItem(OutLook.OlItemType.olMailItem) as OutLook.MailItem;
 
 
                         mailItem.To = "sandbil@ya.ru";
                         mailItem.Subject = "123This is the subject OutlookIntegrationEx 123";
                         mailItem.Body = "This is the body без предупр OutlookIntegrationEx123";
 
-                        //mailItem.Display(false);
-                        //mailItem.Send();
-
                         postData = new { token = token, documentId = docId };
                         bodyStr = TaskGetDocAsync("http://"+sedSRV+"/api/document/document", postData).Result; 
                         JObject doc = JObject.Parse(bodyStr);
                         Doc2msg docForMsg = doc.ToObject<Doc2msg>();
                         
-
                         foreach (AttachFileInfo elm in docForMsg.files)
                         {
                             //var tasks = new List<Task>();
                             //tasks.Add(PostAsync(""));
                             //Task.WaitAll(tasks.ToArray());
-                            string targetPath = Path.Combine(tempFolder.FullName, elm.name);
+
                             postData = new { filePath = elm.fullPath, fileName = elm.name };
-                            bodyStr = TaskDownloadFile("http://" + sedSRV + "/api/document/downloadFile", postData).Result; 
-                          
+                            string downloadFile = TaskDownloadFile("http://" + sedSRV + "/api/document/downloadFile", postData, tempFolder).Result;
+                            mailItem.Attachments.Add(downloadFile, 1, 1, elm.name);
+
                         }
+
+                        //mailItem.Display(false);
+                        //mailItem.Send();
+
                         rp.BodyData = Encoding.UTF8.GetBytes(bodyStr);
                     }
                     catch (Exception ex)
                     {
-                        bodyStr += "Case add";
-                        bodyStr += string.Format("Error: {0}  Message: {1}", ex.HResult.ToString("X"), ex.Message); // TODO check error message
+                        bodyStr = headPage +  "<BODY><p>" + string.Format("Error: {0}  Message: {1}", ex.HResult.ToString("X"), ex.Message) + "<p>\n";
+                        bodyStr += "</BODY></HTML>\n";
+
+                  //      bodyStr += "Case add";
+                  //      bodyStr += string.Format("Error: {0}  Message: {1}", ex.HResult.ToString("X"), ex.Message); // TODO check error message
 
                         rp.BodyData = Encoding.UTF8.GetBytes(bodyStr);
                         //Console.WriteLine("Case add");
                     }
                     finally
                     {
-                        tempFolder.Delete(true);
+                        //tempFolder.Delete(true);
+                        ReleaseCOMObjects();
                     }
                     break;
                 case "/status":
@@ -192,27 +222,6 @@ namespace Sed2Outlook.CsHTTPServer
             return;
 
             string path = this.Folder + "\\" + rq.URL.Replace("/", "\\");
-
-            if (Directory.Exists(path))
-            {
-                if (File.Exists(path + "index.html"))
-                    path += "\\index.html";
-                else
-                {
-                    string[] dirs = Directory.GetDirectories(path);
-                    string[] files = Directory.GetFiles(path);
-
-                    bodyStr = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">\n";
-                    bodyStr += "<HTML><HEAD>\n";
-                    bodyStr += "<META http-equiv=Content-Type content=\"text/html; charset=windows-1252\">\n";
-                    bodyStr += "</HEAD>\n";
-                    bodyStr += "<BODY><p>Folder listing, to do not see this add a 'default.htm' document\n<p>\n";
-                    for (int i = 0; i < dirs.Length; i++)
-                        bodyStr += "<br><a href = \"" + rq.URL + Path.GetFileName(dirs[i]) + "/\">[" + Path.GetFileName(dirs[i]) + "]</a>\n";
-                    for (int i = 0; i < files.Length; i++)
-                        bodyStr += "<br><a href = \"" + rq.URL + Path.GetFileName(files[i]) + "\">" + Path.GetFileName(files[i]) + "</a>\n";
-                                    }
-            }
 
             if (File.Exists(path))
             {
