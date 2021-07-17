@@ -24,6 +24,7 @@ namespace Sed2Outlook.CsHTTPServer
 
         // MyServer settings 
         public string attachFolder = "C:\\EmailAttachSed";
+        public string serverSed = "10.75.113.107:8080";
         public int httpPort = 8082;
 
         // Constructor
@@ -63,6 +64,7 @@ namespace Sed2Outlook.CsHTTPServer
             xmlOut.WriteAttributeString("startOnWindows", this.startOnWindows.ToString());
             //
             xmlOut.WriteAttributeString("attachFolder", this.attachFolder);
+            xmlOut.WriteAttributeString("serverSed", this.serverSed);
             xmlOut.WriteAttributeString("httpPort", this.httpPort.ToString());
             xmlOut.WriteEndElement();
 
@@ -126,6 +128,7 @@ namespace Sed2Outlook.CsHTTPServer
                     startOnWindows = Convert.ToBoolean(xmlIn.GetAttribute("startOnWindows"));
 
                     attachFolder = xmlIn.GetAttribute("attachFolder");
+                    serverSed = xmlIn.GetAttribute("serverSed");
                     httpPort = Convert.ToInt32(xmlIn.GetAttribute("httpPort"));
 
                     mainWindowLocation = new Point(x, y);

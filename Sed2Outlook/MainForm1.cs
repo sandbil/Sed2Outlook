@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Sed2Outlook.CsHTTPServer;
 
+using Microsoft.Win32;
+
 using System.IO;
 
 namespace Sed2Outlook
@@ -16,40 +18,16 @@ namespace Sed2Outlook
     public partial class Sed2OutlookFrm : Form
     {
         CsHTTPServer.CsHTTPServer HTTPServer;
-        private Configuration config = new Configuration(Path.GetDirectoryName(Application.ExecutablePath));
+        private Configuration config = new Configuration(Paths.Executable) ;//new Configuration(Path.GetDirectoryName(Application.ExecutablePath));
         int eX, eY;
+        bool fisrtView = true;
+
 
         public Sed2OutlookFrm()
         {
             InitializeComponent();
         }
 
-        private void Browse_Click(object sender, EventArgs e)
-        {
-            if (FolderBrowser.ShowDialog() == DialogResult.OK)
-                ATTACH_FOLDER.Text = FolderBrowser.SelectedPath;
-        }
-
-        private void ATTACH_FOLDER_Validated(object sender, EventArgs e)
-        {
-            // If all conditions have been met, clear the ErrorProvider of errors.
-            Error.SetError(ATTACH_FOLDER, "");
-        }
-
-        private void ATTACH_FOLDER_Validating(object sender, CancelEventArgs e)
-        {
-            string errorMsg = "Folder must be valid path.\n" +
-                "For example 'C:\\EmailAttachSed' ";
-            if (!Directory.Exists(ATTACH_FOLDER.Text))
-            {
-                // Cancel the event and select the text to be corrected by the user.
-                e.Cancel = true;
-                ATTACH_FOLDER.Select(0, ATTACH_FOLDER.Text.Length);
-
-                // Set the ErrorProvider error with the text to display. 
-                this.Error.SetError(ATTACH_FOLDER, errorMsg);
-            }
-        }
 
         private void HTTP_PORT_Validated(object sender, EventArgs e)
         {
@@ -113,17 +91,16 @@ namespace Sed2Outlook
         private void Start_Click(object sender, EventArgs e)
         {
             //
-            HTTPServer = new MyServer(Convert.ToInt32(HTTP_PORT.Text), ATTACH_FOLDER.Text);
+            HTTPServer = new MyServer(Convert.ToInt32(HTTP_PORT.Text), SED_SRV.Text);
             HTTPServer.Start();
             //
             HTTP_PORT.Enabled = false;
-            ATTACH_FOLDER.Enabled = false;
-            Browse.Enabled = false;
+            SED_SRV.Enabled = false;
             Start.Enabled = false;
             Stop.Enabled = true;
             //
-            contextMenu.MenuItems[3].Enabled = false;
-            contextMenu.MenuItems[4].Enabled = true;
+            contextMenu.MenuItems[2].Enabled = false;
+            contextMenu.MenuItems[3].Enabled = true;
         }
 
         private void Stop_Click(object sender, EventArgs e)
@@ -132,13 +109,12 @@ namespace Sed2Outlook
             HTTPServer.Stop();
             //
             HTTP_PORT.Enabled = true;
-            ATTACH_FOLDER.Enabled = true;
-            Browse.Enabled = true;
+            SED_SRV.Enabled = true;
             Stop.Enabled = false;
             Start.Enabled = true;
             //
-            contextMenu.MenuItems[4].Enabled = false;
-            contextMenu.MenuItems[3].Enabled = true;
+            contextMenu.MenuItems[3].Enabled = false;
+            contextMenu.MenuItems[2].Enabled = true;
         }
 
         private void Sed2OutlookFrm_Load(object sender, EventArgs e)
@@ -149,7 +125,7 @@ namespace Sed2Outlook
             this.Location = config.mainWindowLocation;
 
             //
-            ATTACH_FOLDER.Text = config.attachFolder;
+            SED_SRV.Text = config.serverSed;
             HTTP_PORT.Text = config.httpPort.ToString();
             //
             if (config.startServing)
@@ -157,7 +133,6 @@ namespace Sed2Outlook
             //
             startServing.Checked = config.startServing;
             startMinimized.Checked = config.startMinimized;
-            startOnWindows.Checked = config.startOnWindows;
             
         }
 
@@ -170,13 +145,12 @@ namespace Sed2Outlook
             //
             config.mainWindowLocation = this.Location;
             //
-            config.attachFolder = ATTACH_FOLDER.Text;
+            config.serverSed = SED_SRV.Text;
             config.httpPort = Int32.Parse(HTTP_PORT.Text);
 
             //
             config.startServing = startServing.Checked;
             config.startMinimized = startMinimized.Checked;
-            config.startOnWindows = startOnWindows.Checked;
 
             config.SaveSettings();
             Application.ExitThread();
@@ -195,6 +169,16 @@ namespace Sed2Outlook
                 this.Left += e.X - eX;
                 this.Top += e.Y - eY;
                 this.OnMove(e);
+            }
+
+        }
+
+        private void Sed2OutlookFrm_Activated(object sender, EventArgs e)
+        {
+            if ((config.startMinimized) && (fisrtView))
+            {
+                this.Hide();
+                fisrtView = false;
             }
 
         }

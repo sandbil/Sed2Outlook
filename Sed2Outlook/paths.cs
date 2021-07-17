@@ -14,7 +14,7 @@ namespace Sed2Outlook.CsHTTPServer
 
         private static readonly string AppDataPath = Path.Combine(ExecutablePath, "Data");
 
-        private static readonly string TempPath = Path.Combine(AppDataPath, "temp");
+        private static readonly string TempPath = Path.Combine(ExecutablePath, "temp");
 
         private static readonly string RecoveryPath = Path.Combine(AppDataPath, "recovery");
 

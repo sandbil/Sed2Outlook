@@ -2,6 +2,7 @@
 using System.Net.Http;
 using Newtonsoft.Json.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.IO;
@@ -14,6 +15,7 @@ namespace Sed2Outlook.CsHTTPServer
     public class MyServer : CsHTTPServer
     {
         public string Folder;
+        public string serverSed;
         OutLook.Application outlookObj = null;
         OutLook.MAPIFolder root = null;
         OutLook.MailItem mailItem = null;
@@ -21,11 +23,12 @@ namespace Sed2Outlook.CsHTTPServer
         public MyServer() : base()
         {
             this.Folder = "c:\\EmailAttachSed";
+            this.serverSed =  "10.75.113.107:8080";
         }
 
-        public MyServer(int thePort, string theFolder) : base(thePort)
+        public MyServer(int thePort, string sedSRV) : base(thePort)
         {
-            this.Folder = theFolder;
+            this.serverSed = sedSRV;
         }
 
         public async Task<String> TaskGetDocAsync(string uri, dynamic data)
@@ -107,6 +110,8 @@ namespace Sed2Outlook.CsHTTPServer
         {
             public string guid { get; set; }
             public string summary { get; set; }
+            public string comment { get; set; }
+            public DateTime dateInternalRegistration { get; set; }
             public SedUser creator { get; set; }
             public string internalNumber { get; set; }
             public IList<AttachFileInfo> files { get; set; }
@@ -131,8 +136,7 @@ namespace Sed2Outlook.CsHTTPServer
         {
             string bodyStr = "";
             string docId = "", token = ""; 
-            string sedSRV = "10.75.113.107:8080";
-            //sedSRV = "localhost:8080";
+
             dynamic postData;
             string headPage = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">\n";
             headPage += "<HTML><HEAD>\n";
@@ -160,16 +164,20 @@ namespace Sed2Outlook.CsHTTPServer
                         root = outlookObj.Session.DefaultStore.GetRootFolder();
                         mailItem = outlookObj.CreateItem(OutLook.OlItemType.olMailItem) as OutLook.MailItem;
 
-
-                        mailItem.To = "sandbil@ya.ru";
-                        mailItem.Subject = "123This is the subject OutlookIntegrationEx 123";
-                        mailItem.Body = "This is the body без предупр OutlookIntegrationEx123";
-
                         postData = new { token = token, documentId = docId };
-                        bodyStr = TaskGetDocAsync("http://"+sedSRV+"/api/document/document", postData).Result; 
-                        JObject doc = JObject.Parse(bodyStr);
+                        string docJsonStr = TaskGetDocAsync("http://" + this.serverSed + "/api/document/document", postData).Result; 
+                        JObject doc = JObject.Parse(docJsonStr);
                         Doc2msg docForMsg = doc.ToObject<Doc2msg>();
-                        
+
+                        string pattern = @"([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)";
+                        Regex rgx = new Regex(pattern);
+                        if (docForMsg.comment != null)
+                        foreach (Match match in rgx.Matches(docForMsg.comment))
+                            mailItem.To = mailItem.To + "; " + match.Value;
+
+                        mailItem.Subject = "№ " + docForMsg.internalNumber + " от " + docForMsg.dateInternalRegistration.ToShortDateString();
+                        mailItem.Body = mailItem.Subject + "\n" + "Краткое содержание: " + docForMsg.summary;
+
                         foreach (AttachFileInfo elm in docForMsg.files)
                         {
                             //var tasks = new List<Task>();
@@ -177,30 +185,30 @@ namespace Sed2Outlook.CsHTTPServer
                             //Task.WaitAll(tasks.ToArray());
 
                             postData = new { filePath = elm.fullPath, fileName = elm.name };
-                            string downloadFile = TaskDownloadFile("http://" + sedSRV + "/api/document/downloadFile", postData, tempFolder).Result;
+                            string downloadFile = TaskDownloadFile("http://" + this.serverSed + "/api/document/downloadFile", postData, tempFolder).Result;
                             mailItem.Attachments.Add(downloadFile, 1, 1, elm.name);
 
                         }
 
-                        //mailItem.Display(false);
+                        mailItem.Display(false);
                         //mailItem.Send();
 
-                        rp.BodyData = Encoding.UTF8.GetBytes(bodyStr);
+                        rp.Headers["Access-Control-Allow-Origin"] = rq.Headers["Origin"];
+                        rp.Headers["Content-Type"] = "application/json; charset=utf-8";
+                        rp.BodyData = Encoding.UTF8.GetBytes("{\"result\":true, \"msg\":\"\"}");
                     }
                     catch (Exception ex)
                     {
-                        bodyStr = headPage +  "<BODY><p>" + string.Format("Error: {0}  Message: {1}", ex.HResult.ToString("X"), ex.Message) + "<p>\n";
-                        bodyStr += "</BODY></HTML>\n";
-
-                  //      bodyStr += "Case add";
-                  //      bodyStr += string.Format("Error: {0}  Message: {1}", ex.HResult.ToString("X"), ex.Message); // TODO check error message
-
-                        rp.BodyData = Encoding.UTF8.GetBytes(bodyStr);
-                        //Console.WriteLine("Case add");
+                        //bodyStr = headPage +  "<BODY><p>" + string.Format("Error: {0}  Message: {1}", ex.HResult.ToString("X"), ex.Message) + "<p>\n";
+                        //bodyStr += "</BODY></HTML>\n";
+                        rp.status = (int)RespState.SRV_ERR;
+                        rp.Headers["Access-Control-Allow-Origin"] = rq.Headers["Origin"];
+                        rp.Headers["Content-Type"] = "application/json; charset=utf-8";
+                        rp.BodyData = Encoding.UTF8.GetBytes("{\"result\":false, \"msg\":\"" + ex.Message + "\"}");
                     }
                     finally
                     {
-                        //tempFolder.Delete(true);
+                        tempFolder.Delete(true);
                         ReleaseCOMObjects();
                     }
                     break;
@@ -214,42 +222,11 @@ namespace Sed2Outlook.CsHTTPServer
                     bodyStr += "</HEAD>\n";
                     bodyStr += "<BODY><p>Сервис создания почтовых сообщений из документов СЭД\n<p>\n";
                     bodyStr += "</BODY></HTML>\n";
-
+                    rp.Headers["Content-Type"] = "text/html; charset=utf-8";
                     rp.BodyData = Encoding.UTF8.GetBytes(bodyStr);
                     break;
             }
-
             return;
-
-            string path = this.Folder + "\\" + rq.URL.Replace("/", "\\");
-
-            if (File.Exists(path))
-            {
-                RegistryKey rk = Registry.ClassesRoot.OpenSubKey(Path.GetExtension(path), true);
-
-                // Get the data from a specified item in the key.
-                String s = (String)rk.GetValue("Content Type");
-
-                // Open the stream and read it back.
-                rp.fs = File.Open(path, FileMode.Open);
-                if (s != "")
-                    rp.Headers["Content-type"] = s;
-            }
-            else
-            {
-
-                rp.status = (int)RespState.NOT_FOUND;
-
-                bodyStr = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">\n";
-                bodyStr += "<HTML><HEAD>\n";
-                bodyStr += "<META http-equiv=Content-Type content=\"text/html; charset=windows-1252\">\n";
-                bodyStr += "</HEAD>\n";
-                bodyStr += "<BODY>File not found!!</BODY></HTML>\n";
-
-                rp.BodyData = Encoding.ASCII.GetBytes(bodyStr);
-
-            }
-
         }
     }
 }

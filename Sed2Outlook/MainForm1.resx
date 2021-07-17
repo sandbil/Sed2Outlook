@@ -117,299 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="startOnWindows.Location" type="System.Drawing.Point, System.Drawing">
-    <value>230, 168</value>
-  </data>
-  <data name="startOnWindows.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 27</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="startOnWindows.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="startOnWindows.Text" xml:space="preserve">
-    <value>On Windows</value>
-  </data>
-  <data name="&gt;&gt;startOnWindows.Name" xml:space="preserve">
-    <value>startOnWindows</value>
-  </data>
-  <data name="&gt;&gt;startOnWindows.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;startOnWindows.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;startOnWindows.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="startMinimized.Location" type="System.Drawing.Point, System.Drawing">
-    <value>119, 168</value>
-  </data>
-  <data name="startMinimized.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 27</value>
-  </data>
-  <data name="startMinimized.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="startMinimized.Text" xml:space="preserve">
-    <value>Minimized</value>
-  </data>
-  <data name="&gt;&gt;startMinimized.Name" xml:space="preserve">
-    <value>startMinimized</value>
-  </data>
-  <data name="&gt;&gt;startMinimized.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;startMinimized.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;startMinimized.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="startServing.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 168</value>
-  </data>
-  <data name="startServing.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 27</value>
-  </data>
-  <data name="startServing.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="startServing.Text" xml:space="preserve">
-    <value>AutoStart</value>
-  </data>
-  <data name="&gt;&gt;startServing.Name" xml:space="preserve">
-    <value>startServing</value>
-  </data>
-  <data name="&gt;&gt;startServing.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;startServing.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;startServing.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="Browse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>315, 54</value>
-  </data>
-  <data name="Browse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>28, 26</value>
-  </data>
-  <data name="Browse.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="Browse.Text" xml:space="preserve">
-    <value>...</value>
-  </data>
-  <data name="&gt;&gt;Browse.Name" xml:space="preserve">
-    <value>Browse</value>
-  </data>
-  <data name="&gt;&gt;Browse.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Browse.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;Browse.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="LHTTP_PORT.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 84</value>
-  </data>
-  <data name="LHTTP_PORT.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 23</value>
-  </data>
-  <data name="LHTTP_PORT.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="LHTTP_PORT.Text" xml:space="preserve">
-    <value>Port</value>
-  </data>
-  <data name="&gt;&gt;LHTTP_PORT.Name" xml:space="preserve">
-    <value>LHTTP_PORT</value>
-  </data>
-  <data name="&gt;&gt;LHTTP_PORT.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LHTTP_PORT.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;LHTTP_PORT.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="LATTACH_FOLDER.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 55</value>
-  </data>
-  <data name="LATTACH_FOLDER.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 23</value>
-  </data>
-  <data name="LATTACH_FOLDER.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="LATTACH_FOLDER.Text" xml:space="preserve">
-    <value>Folder</value>
-  </data>
-  <data name="LATTACH_FOLDER.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;LATTACH_FOLDER.Name" xml:space="preserve">
-    <value>LATTACH_FOLDER</value>
-  </data>
-  <data name="&gt;&gt;LATTACH_FOLDER.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LATTACH_FOLDER.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;LATTACH_FOLDER.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="ATTACH_FOLDER.Location" type="System.Drawing.Point, System.Drawing">
-    <value>74, 57</value>
-  </data>
-  <data name="ATTACH_FOLDER.Size" type="System.Drawing.Size, System.Drawing">
-    <value>235, 22</value>
-  </data>
-  <data name="ATTACH_FOLDER.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;ATTACH_FOLDER.Name" xml:space="preserve">
-    <value>ATTACH_FOLDER</value>
-  </data>
-  <data name="&gt;&gt;ATTACH_FOLDER.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ATTACH_FOLDER.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;ATTACH_FOLDER.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="Stop.Location" type="System.Drawing.Point, System.Drawing">
-    <value>94, 124</value>
-  </data>
-  <data name="Stop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 27</value>
-  </data>
-  <data name="Stop.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="Stop.Text" xml:space="preserve">
-    <value>Stop</value>
-  </data>
-  <data name="&gt;&gt;Stop.Name" xml:space="preserve">
-    <value>Stop</value>
-  </data>
-  <data name="&gt;&gt;Stop.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Stop.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;Stop.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="Start.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 124</value>
-  </data>
-  <data name="Start.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 27</value>
-  </data>
-  <data name="Start.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="Start.Text" xml:space="preserve">
-    <value>Start</value>
-  </data>
-  <data name="&gt;&gt;Start.Name" xml:space="preserve">
-    <value>Start</value>
-  </data>
-  <data name="&gt;&gt;Start.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Start.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;Start.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="HTTP_PORT.Location" type="System.Drawing.Point, System.Drawing">
-    <value>74, 84</value>
-  </data>
-  <data name="HTTP_PORT.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 22</value>
-  </data>
-  <data name="HTTP_PORT.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="&gt;&gt;HTTP_PORT.Name" xml:space="preserve">
-    <value>HTTP_PORT</value>
-  </data>
-  <data name="&gt;&gt;HTTP_PORT.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;HTTP_PORT.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;HTTP_PORT.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="lblActions.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopLeft</value>
-  </data>
-  <data name="lblActions.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 121</value>
-  </data>
-  <data name="lblActions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>335, 33</value>
-  </data>
-  <data name="lblActions.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;lblActions.Name" xml:space="preserve">
-    <value>lblActions</value>
-  </data>
-  <data name="&gt;&gt;lblActions.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblActions.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lblActions.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <metadata name="contextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <data name="OpenItem1.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="HideItem2.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="menuItem3.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="StartItem4.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="StopItem5.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="ExitItem8.Text" xml:space="preserve">
-    <value />
-  </data>
-  <metadata name="notifyIcon.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>164, 17</value>
-  </metadata>
   <metadata name="Error.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>289, 17</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>8, 16</value>
   </data>
@@ -420,6 +134,9 @@
     <value>Microsoft Sans Serif, 7.8pt, style=Bold</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btClose.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>TopLeft</value>
+  </data>
   <data name="btClose.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -429,6 +146,7 @@
   <data name="btClose.Size" type="System.Drawing.Size, System.Drawing">
     <value>28, 26</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btClose.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -449,6 +167,9 @@
   </data>
   <data name="btMinimize.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 7.8pt, style=Bold</value>
+  </data>
+  <data name="btMinimize.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>TopLeft</value>
   </data>
   <data name="btMinimize.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -480,6 +201,42 @@
   <data name="frmCaption.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 7.8pt, style=Bold</value>
   </data>
+  <data name="frmCaption.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>TopLeft</value>
+  </data>
+  <data name="frmCaption.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+        jyCIfwE44YWMA0BFIwAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="frmCaption.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>TopLeft</value>
   </data>
@@ -496,7 +253,7 @@
     <value>2</value>
   </data>
   <data name="frmCaption.Text" xml:space="preserve">
-    <value>  Sed2Outlook</value>
+    <value>        Sed2Outlook</value>
   </data>
   <data name="frmCaption.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -513,6 +270,249 @@
   <data name="&gt;&gt;frmCaption.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="startServing.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>TopLeft</value>
+  </data>
+  <data name="startServing.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 168</value>
+  </data>
+  <data name="startServing.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 27</value>
+  </data>
+  <data name="startServing.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="startServing.Text" xml:space="preserve">
+    <value>AutoStart</value>
+  </data>
+  <data name="&gt;&gt;startServing.Name" xml:space="preserve">
+    <value>startServing</value>
+  </data>
+  <data name="&gt;&gt;startServing.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;startServing.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;startServing.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="LHTTP_PORT.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>TopLeft</value>
+  </data>
+  <data name="LHTTP_PORT.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 84</value>
+  </data>
+  <data name="LHTTP_PORT.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 23</value>
+  </data>
+  <data name="LHTTP_PORT.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="LHTTP_PORT.Text" xml:space="preserve">
+    <value>Service port</value>
+  </data>
+  <data name="&gt;&gt;LHTTP_PORT.Name" xml:space="preserve">
+    <value>LHTTP_PORT</value>
+  </data>
+  <data name="&gt;&gt;LHTTP_PORT.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LHTTP_PORT.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LHTTP_PORT.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="LSED_SRV.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>TopLeft</value>
+  </data>
+  <data name="LSED_SRV.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 56</value>
+  </data>
+  <data name="LSED_SRV.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
+  </data>
+  <data name="LSED_SRV.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="LSED_SRV.Text" xml:space="preserve">
+    <value>SED server</value>
+  </data>
+  <data name="&gt;&gt;LSED_SRV.Name" xml:space="preserve">
+    <value>LSED_SRV</value>
+  </data>
+  <data name="&gt;&gt;LSED_SRV.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LSED_SRV.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LSED_SRV.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="SED_SRV.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>TopLeft</value>
+  </data>
+  <data name="SED_SRV.Location" type="System.Drawing.Point, System.Drawing">
+    <value>123, 56</value>
+  </data>
+  <data name="SED_SRV.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 22</value>
+  </data>
+  <data name="SED_SRV.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;SED_SRV.Name" xml:space="preserve">
+    <value>SED_SRV</value>
+  </data>
+  <data name="&gt;&gt;SED_SRV.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SED_SRV.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;SED_SRV.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="Stop.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>TopLeft</value>
+  </data>
+  <data name="Stop.Location" type="System.Drawing.Point, System.Drawing">
+    <value>153, 124</value>
+  </data>
+  <data name="Stop.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 27</value>
+  </data>
+  <data name="Stop.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="Stop.Text" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="&gt;&gt;Stop.Name" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="&gt;&gt;Stop.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Stop.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Stop.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="Start.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>TopLeft</value>
+  </data>
+  <data name="Start.Location" type="System.Drawing.Point, System.Drawing">
+    <value>74, 124</value>
+  </data>
+  <data name="Start.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 27</value>
+  </data>
+  <data name="Start.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="Start.Text" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="&gt;&gt;Start.Name" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="&gt;&gt;Start.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Start.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Start.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="HTTP_PORT.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>TopLeft</value>
+  </data>
+  <data name="HTTP_PORT.Location" type="System.Drawing.Point, System.Drawing">
+    <value>112, 84</value>
+  </data>
+  <data name="HTTP_PORT.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 22</value>
+  </data>
+  <data name="HTTP_PORT.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;HTTP_PORT.Name" xml:space="preserve">
+    <value>HTTP_PORT</value>
+  </data>
+  <data name="&gt;&gt;HTTP_PORT.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;HTTP_PORT.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;HTTP_PORT.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="lblActions.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>TopLeft</value>
+  </data>
+  <data name="lblActions.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopLeft</value>
+  </data>
+  <data name="lblActions.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 121</value>
+  </data>
+  <data name="lblActions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>329, 33</value>
+  </data>
+  <data name="lblActions.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;lblActions.Name" xml:space="preserve">
+    <value>lblActions</value>
+  </data>
+  <data name="&gt;&gt;lblActions.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblActions.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblActions.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+        4YWM9ntVrQAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>SED2Outlook</value>
   </data>
@@ -522,22 +522,16 @@
   <data name="&gt;&gt;contextMenu.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenu, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;OpenItem1.Name" xml:space="preserve">
-    <value>OpenItem1</value>
+  <data name="&gt;&gt;ShowItem.Name" xml:space="preserve">
+    <value>ShowItem</value>
   </data>
-  <data name="&gt;&gt;OpenItem1.Type" xml:space="preserve">
+  <data name="&gt;&gt;ShowItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;HideItem2.Name" xml:space="preserve">
-    <value>HideItem2</value>
+  <data name="&gt;&gt;HideItem.Name" xml:space="preserve">
+    <value>HideItem</value>
   </data>
-  <data name="&gt;&gt;HideItem2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;menuItem3.Name" xml:space="preserve">
-    <value>menuItem3</value>
-  </data>
-  <data name="&gt;&gt;menuItem3.Type" xml:space="preserve">
+  <data name="&gt;&gt;HideItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;StartItem4.Name" xml:space="preserve">
@@ -570,19 +564,83 @@
   <data name="&gt;&gt;Error.Type" xml:space="preserve">
     <value>System.Windows.Forms.ErrorProvider, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;FolderBrowser.Name" xml:space="preserve">
-    <value>FolderBrowser</value>
-  </data>
-  <data name="&gt;&gt;FolderBrowser.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FolderBrowserDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Sed2OutlookFrm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <metadata name="FolderBrowser.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>378, 17</value>
+  <data name="startMinimized.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>TopLeft</value>
+  </data>
+  <data name="startMinimized.Location" type="System.Drawing.Point, System.Drawing">
+    <value>119, 168</value>
+  </data>
+  <data name="startMinimized.Size" type="System.Drawing.Size, System.Drawing">
+    <value>101, 27</value>
+  </data>
+  <data name="startMinimized.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="startMinimized.Text" xml:space="preserve">
+    <value>Minimized</value>
+  </data>
+  <data name="&gt;&gt;startMinimized.Name" xml:space="preserve">
+    <value>startMinimized</value>
+  </data>
+  <data name="&gt;&gt;startMinimized.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;startMinimized.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;startMinimized.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <metadata name="contextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
   </metadata>
+  <data name="ShowItem.Text" xml:space="preserve">
+    <value>&amp;Show</value>
+  </data>
+  <data name="HideItem.Text" xml:space="preserve">
+    <value>&amp;Hide</value>
+  </data>
+  <data name="StartItem4.Text" xml:space="preserve">
+    <value>S&amp;tart</value>
+  </data>
+  <data name="StopItem5.Text" xml:space="preserve">
+    <value>Sto&amp;p</value>
+  </data>
+  <data name="ExitItem8.Text" xml:space="preserve">
+    <value>E&amp;xit</value>
+  </data>
+  <metadata name="notifyIcon.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>164, 17</value>
+  </metadata>
+  <data name="notifyIcon.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAEAIABQAwAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAAQAAAAEAgDAAAAKC0PUwAAAAFz
+        UkdCAdnJLH8AAAAJcEhZcwAAAE8AAABPAWOK/dcAAAGYUExURQAAAHHKoky8iku8ikaFd0BSZz9SZnGA
+        jmJxgUBTZkBTZ0eUfEy8iobSsaLcwka6hkG4g0CvgDZSYTVJXkRXasDHzbjAxz5RZTVJXjdaZEGzgUG4
+        g0e6h5HWuF7DlkG4g0G4gzyIczVJXjVJXniGlGFxgTVJXjVIXj2WeEG4g2PFmbbkz0q8iUG4g0G2gjNP
+        Ti01ODM6OzE4Oi9BPDRwSzRxTDZpRzw8KHLKo0G4g3hiEbOVNfbOTPjPTfLKS6OILmNMCE29i0G4g6d+
+        BM2cBoVsHerDSP/VT9q2Q4VpFN6oBnJXA4zUtEO5hKh/BP/BB/O4B4ljCaeKMJp7KJhxCPu+B1zClfm9
+        B4NcAt+VCKicLrSeKdSJBZBqA5nZvJlzBIhdAbubIy5XOy57Wi9oUDsxF9yKAINdAlA8CHNIAE1oODWN
+        ZyJUQCE0Lg0RE4NWCGtDAE01Acbq2k69iyhrTzWQaR0+MQ8TFAoNDw8VF3/Pqz2qeiRbRB4xLA4SFA8T
+        FhUbHVK+jlm3jggKCwkLDRwjJ3vOqYPRrj4soGYAAACIdFJOUwB6qKysrKU4SqesrKRsLtz9/v78vQwS
+        zP3+/vy3DWf0////84WU9v//70YLxf7////4+f///t40S+j///////7wl/v////////+//8u4///////
+        ////kP/////7+/8S//////7On9v/zv////awW6H/pgvF/vrgu6k+S+jwfHFhApF+PDQGFg/Nl1UqAAAA
+        vUlEQVR4nGNgQAeMTMwsrGzsDAwcnFzczDy8DHz8AoJCwiKiYuISklLSMrIMDHLyCopKyiqqauoaCppa
+        QD3aOrp6+gaGRgbGJqZm5iBTLCwVrKxtbIHAzt4BbK6jk7OLq5u7u4enlzdYwMfXzz8gMCg4JNQfIsAQ
+        5hceERkVHRMbChWIi09ITEpOSU1LhwowZGRmZefk5uUXFEIFiopLSsvKKyoRHqiqrqmtq29A8lJjU3NL
+        K7If29oxvA0FAOcvJyEfiYezAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="notifyIcon.Text" xml:space="preserve">
+    <value>Sed2Outlook</value>
+  </data>
+  <data name="notifyIcon.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
 </root>
