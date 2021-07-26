@@ -1,0 +1,28 @@
+{
+   "description": "для отправки email ",
+   "manifest_version": 2,
+   "name": "СЭД2Outlook",
+
+   "background": {
+      "scripts": [ "consts.js", "script.js" ],
+	  "persistent": false
+   },
+   "content_scripts": [
+		{
+			"matches": ["*://10.75.113.107/document/*",
+			            "*://localhost/document/*"],
+			"js": ["contentScript.js"]
+		}
+	],
+   "browser_action": {
+		"default_icon": {
+			"128": "sed2outlook.png"
+		},
+     "default_popup": "popup.html"
+   },
+   "icons": {
+      "128": "sed2outlook.png"
+   },
+   "permissions": [ "contextMenus", "tabs", "activeTab", "declarativeContent", "storage" ],
+   "version": "0.2.8"
+}

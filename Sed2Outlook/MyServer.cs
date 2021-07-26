@@ -204,7 +204,7 @@ namespace Sed2Outlook.CsHTTPServer
                         rp.status = (int)RespState.SRV_ERR;
                         rp.Headers["Access-Control-Allow-Origin"] = rq.Headers["Origin"];
                         rp.Headers["Content-Type"] = "application/json; charset=utf-8";
-                        rp.BodyData = Encoding.UTF8.GetBytes("{\"result\":false, \"msg\":\"" + ex.Message + "\"}");
+                        rp.BodyData = Encoding.UTF8.GetBytes("{\"result\":false, \"error\":\"" + ex.HResult.ToString("X") + "\",\"msg\":\"" + ex.Message + "\"}");
                     }
                     finally
                     {
