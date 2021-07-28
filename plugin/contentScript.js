@@ -13,7 +13,7 @@
                 btn.setAttribute('class','sed-btn sed-btn-green sed-fs-12');
                 btn.setAttribute('style','margin-left: 20px;');
                 btn.setAttribute('onclick', 'sendMSOtl()');
-                btn.innerText = "Отправить Email";
+                btn.innerText = "Отправить MS Outlook";
                 divTools[0].appendChild(btn)
 
                 let sendMSOtl = "function sendMSOtl(){" +

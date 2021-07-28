@@ -176,7 +176,7 @@ namespace Sed2Outlook.CsHTTPServer
                             mailItem.To = mailItem.To + "; " + match.Value;
 
                         mailItem.Subject = "№ " + docForMsg.internalNumber + " от " + docForMsg.dateInternalRegistration.ToShortDateString();
-                        mailItem.Body = mailItem.Subject + "\n" + "Краткое содержание: " + docForMsg.summary;
+                        //mailItem.Body = mailItem.Subject + "\n" + "Краткое содержание: " + docForMsg.summary;
 
                         foreach (AttachFileInfo elm in docForMsg.files)
                         {
@@ -190,7 +190,7 @@ namespace Sed2Outlook.CsHTTPServer
 
                         }
 
-                        mailItem.Display(false);
+                        mailItem.Display(true);
                         //mailItem.Send();
 
                         rp.Headers["Access-Control-Allow-Origin"] = rq.Headers["Origin"];
